@@ -1,0 +1,101 @@
+body {background-color: #000000;
+	margin-right: 250px;
+	margin-left: 200px;
+	color: white;
+	overflow: scroll;
+
+}
+
+h1{
+    color: white;
+    text-align: center;
+    background-color: black;
+	position: absolute;
+	margin-left:50px;
+	margin-top: 50px;
+
+}
+p{
+    color: white;
+	font-size: 30px;
+
+	margin-right: 600px;
+	margin-top: 60px;
+	position: relative;
+
+	
+}
+h2{
+    color: white;
+	position: absolute;
+
+}
+
+.main{
+    margin-top:30px;
+	top: 50px;
+	left: 50px;
+    position:relative;
+	color: white;
+	
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index:500;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+a{
+	text-decoration: none;
+}
+a:hover{
+	color:#ffff00;
+}
+
+img{
+	float:right;
+	margin-top: 50px;
+	margin-left: 600px;
+	position: relative;
+
+}
+footer{
+	text-align: center;
+	text-decoration: none;
+	clear: both;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+background{
+	background-color: white;
+	margin-right: 250px;
+	margin-left: 200px;
+	z-index: 499;
+}
+form {
+	color:black;
+	position:relative;
+	background-color: white;
+}
+legend{
+	color:white;
+}
