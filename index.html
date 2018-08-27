@@ -1,14 +1,152 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<h1> All about I</h1>
+<title> </title>
+<link href="tutor.css" rel="stylesheet">
+<meta charset="utf-8">
 </head>
-<title>
-<h1> Kenton Banyai</h1>
-</title>
 <body>
-<p> This is a story all about how.</p>
-<img src =" king.png" height="200" width="200"/>
-</body>
-<footer> Kenton Banyai </footer>
+<div class="navbar">
+<a href = "C:\Users\Kenton\Documents\html\TutorSite\Tutor.html">Home </a>
+<a href = "C:\Users\Kenton\Documents\html\TutorSite\signup.html"> Sign Up </a>
+<a href = "C:\Users\Kenton\Documents\html\TutorSite\about.html"> About </a>
 
+</div>
+
+<header>
+<h1> Kenton Banyai </h1>
+<img src ="king.png" height="200" width="200" />
+</header>
+
+<div class="main">
+<br>
+<h2> Let's Get Started!</h2>
+
+<p>
+You the man hoss. go get em. Sign up for time with me today!
+</p>
+
+<form id="costform" action="index.html">
+<fieldset>
+<label for ="days">Days a Week:</label>
+<input type="checkbox" id="sunday" name="days" />
+<label for="days">Sunday</label>
+<input type="checkbox" id="monday" name="days" />
+<label for="days">Monday</label>
+<input type="checkbox" id="tuesday" name="days" />
+<label for="days">Tuesday</label>
+<input type="checkbox" id="wednesday" name="days" />
+<label for="days">Wednesday</label>
+<input type="checkbox" id="thursday" name="days" />
+<label for="days">Thursday</label>
+<input type="checkbox" id="friday" name="days" />
+<label for="days">Friday</label>
+<input type="checkbox" id="saturday" name="days" />
+<label for="days">Saturday</label>
+
+</fieldset>
+
+<fieldset>
+<label for="town">What Town do you live in?</label>
+<select id="town" name="town">
+<option value="charleston">Charleston</option>
+<option value="mattoon">Mattoon</option>
+</select>
+
+</fieldset>
+
+<fieldset>
+<label for="comments">Special Notes</label>
+<textarea type = "text" name = "comments" id="comments" rows="3" cols="60"placeholder="Please submit any questions or special instructions."></textarea>
+</fieldset>
+<p>Total Estimate: <span id="estimate"></span></p>
+<fieldset id="submitbutton">
+<input type="submit" id="submitBtn" value="Submit" />
+</fieldset>
+</form>
+<footer>
+Reach out to me at <a href = "monkeyclawzz5@gmail.com"> monkeyclawzz5@gmail.com</a>
+</footer>
+</div>
+<script >
+"use strict"
+var formValidity =false;
+
+function validateChecks(){
+	var days = document.getElementsByName("days");
+	var counter = 0;
+	for(var i=0;i<days.length;i++){
+		if (days[i].checked == false){
+		counter+=1;
+		}
+	}
+
+	if (counter ==7){
+		for(var i=0;i<days.length;i++){
+		days[i].style.outline = "1px solid red";
+		}
+		formValidity = false;
+		}
+}
+
+function validateRadio(){
+	var rad = document.getElementsByName("skill");
+	
+	if(!rad[0].checked && !rad[1].checked && !rad[2].checked){
+		
+		rad[0].style.outline = "1px solid red";
+		rad[1].style.outline = "1px solid red";
+		rad[2].style.outline = "1px solid red";
+		formValidity = false;
+	}
+}
+
+function validateText(){
+
+	var vText = document.getElementById("comments").value;
+	if(document.getElementById("comments").value ===""){
+		document.getElementById("comments").style.background = "rgb(255,233,233)";
+		formValidity = false;
+	}
+}
+function validateForm(evt){
+
+	if(evt.preventDefault){
+		evt.preventDefault();
+	}else{
+		evt.returnValue = false;
+	}
+	formValidity= true;
+	
+	validateChecks();
+	validateRadio();
+	validateText();
+	if(formValidity ===true){
+		document.getElementsByTagName("form")[0].submit();
+	}
+
+}
+
+function setUpPage(){
+createEventListeners();
+}
+
+function createEventListeners(){
+	var orderForm = document.getElementsByTagName("form")[0];
+
+	if(orderForm.addEventListener){
+		orderForm.addEventListener("submit",validateForm,false);
+	}else if (orderForm.attachEvent){
+		orderForm.attachEvent("onsubmit",validateForm);
+	}
+}
+
+if (window.addEventListener){
+	window.addEventListener("load",setUpPage,false);
+}else if(window.attachEvent){
+	window.attachEvent("onload",setUpPage);
+}
+
+</script>
+</body>
 </html>
